@@ -14,6 +14,10 @@ class KategoriForm
                 TextInput::make('kategori_kode')
                     ->label('Kode Kategori')
                     ->required()
+                    ->unique()
+                    ->validationMessages([
+                        'unique' => 'Kode Kategori sudah ada',
+                    ])
                     ->maxLength(10),
                 TextInput::make('kategori_nama')
                     ->label('Nama Kategori')

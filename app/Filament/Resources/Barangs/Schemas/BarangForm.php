@@ -19,6 +19,10 @@ class BarangForm
                 TextInput::make('barang_kode')
                     ->label('Kode Barang')
                     ->required()
+                    ->unique()
+                    ->validationMessages([
+                        'unique' => 'Kode Barang sudah ada',
+                    ])
                     ->maxLength(10),
                 TextInput::make('barang_nama')
                     ->label('Nama Barang')

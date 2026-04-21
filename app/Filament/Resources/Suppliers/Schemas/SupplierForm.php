@@ -14,6 +14,10 @@ class SupplierForm
                 TextInput::make('supplier_kode')
                     ->label('Kode Supplier')
                     ->required()
+                    ->unique()
+                    ->validationMessages([
+                        'unique' => 'Kode Supplier sudah ada',
+                    ])
                     ->maxLength(10),
                 TextInput::make('supplier_nama')
                     ->label('Nama Supplier')
